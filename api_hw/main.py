@@ -21,6 +21,11 @@ app.add_middleware(
 def get_posts():
     return posts
 
+@app.get("/")
+def home():
+    return {"message": "API is running! Try /posts to see data."}
+
+
 # 新增按讚
 @app.post("/like/{post_id}")
 def add_like(post_id: int):
@@ -62,3 +67,4 @@ posts = [
     
  
 ]
+
